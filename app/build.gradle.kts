@@ -8,6 +8,9 @@ import libs.Coil.coil
 import libs.Desugaring.desugaring
 import libs.Material3.material3
 import libs.NavigationCompose.navigation
+import libs.Retrofit.retrofit
+import libs.Timber.timber
+import libs.UiTests.uiTests
 
 plugins {
     id("com.android.application")
@@ -93,6 +96,8 @@ dependencies {
     hilt()
     coil()
     navigation()
+    retrofit()
+    timber()
 }
 
 // Allow references to generated code
