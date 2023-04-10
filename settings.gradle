@@ -14,3 +14,9 @@ dependencyResolutionManagement {
 }
 rootProject.name = "Animals"
 include ':app'
+include ':core:network'
+include ':core:common'
+include ':data:dogs'
+include ':domain:dogs'
+include ':feature:dogs'
+include ':core:compose'

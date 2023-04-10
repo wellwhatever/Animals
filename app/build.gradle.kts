@@ -10,7 +10,6 @@ import libs.Material3.material3
 import libs.NavigationCompose.navigation
 import libs.Retrofit.retrofit
 import libs.Timber.timber
-import libs.UiTests.uiTests
 
 plugins {
     id("com.android.application")
@@ -86,8 +85,6 @@ android {
 }
 
 dependencies {
-    implementation("androidx.compose.ui:ui-tooling-preview:1.4.1")
-    debugImplementation("androidx.compose.ui:ui-tooling:1.4.1")
     kotlin()
     desugaring()
     androidCore()
