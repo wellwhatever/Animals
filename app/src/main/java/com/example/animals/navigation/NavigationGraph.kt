@@ -1,6 +1,7 @@
 package com.example.animals.navigation
 
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
@@ -10,27 +11,32 @@ import com.example.animals.navigation.bottom.BottomNavigationItem
 import com.example.dogs.dogfeed.DogsFeedListRoute
 
 @Composable
-fun NavigationGraph(navHostController: NavHostController) {
+fun NavigationGraph(
+    navHostController: NavHostController,
+    modifier: Modifier
+) {
     NavHost(
         navController = navHostController,
-        startDestination = NavigationRoutes.BOTTOM_NAVIGATION_ROUTE
+        startDestination = NavigationRoutes.BOTTOM_NAVIGATION_ROUTE,
+        modifier = modifier
     ) {
-        bottomNavigationMenu(navHostController)
+        // Define your graphs/nested graphs here
+        bottomNavigationMenu()
     }
 }
 
-fun NavGraphBuilder.bottomNavigationMenu(navHostController: NavHostController) {
+fun NavGraphBuilder.bottomNavigationMenu() {
     navigation(
-        startDestination = BottomNavigationItem.Dogs.screenRoute,
+        startDestination = BottomNavigationItem.Dogs.route,
         route = NavigationRoutes.BOTTOM_NAVIGATION_ROUTE
     ) {
-        composable(BottomNavigationItem.Dogs.screenRoute) {
+        composable(BottomNavigationItem.Dogs.route) {
             DogsFeedListRoute()
         }
-        composable(BottomNavigationItem.Cats.screenRoute) {
+        composable(BottomNavigationItem.Cats.route) {
             // TODO: add cats screen route after implementation
         }
-        composable(BottomNavigationItem.Other.screenRoute) {
+        composable(BottomNavigationItem.Other.route) {
             // TODO: add other screen route after implementation
         }
     }

@@ -14,17 +14,12 @@ import androidx.compose.ui.res.stringResource
 import androidx.navigation.NavController
 import androidx.navigation.compose.currentBackStackEntryAsState
 import kotlinx.collections.immutable.ImmutableList
-import kotlinx.collections.immutable.persistentListOf
-
-private fun generateNavigationItems(): ImmutableList<BottomNavigationItem> = persistentListOf(
-    BottomNavigationItem.Dogs,
-    BottomNavigationItem.Cats,
-    BottomNavigationItem.Other
-)
 
 @Composable
-fun AnimalsBottomNavigation(navController: NavController) {
-    val bottomNavigationItems = generateNavigationItems()
+fun AnimalsBottomNavigation(
+    navController: NavController,
+    bottomNavigationItems: ImmutableList<BottomNavigationItem>
+) {
     BottomNavigation(navController = navController, navigationItems = bottomNavigationItems)
 }
 
@@ -51,9 +46,9 @@ fun BottomNavigation(
                         style = MaterialTheme.typography.labelMedium
                     )
                 },
-                selected = currentRoute == navigationItem.screenRoute,
+                selected = currentRoute == navigationItem.route,
                 onClick = {
-                    BottomNavigationClickHandler.onNavigate(navController, navigationItem)
+                    BottomNavigationClickHandler.navigate(navController, navigationItem)
                 }
             )
         }
@@ -61,8 +56,8 @@ fun BottomNavigation(
 }
 
 object BottomNavigationClickHandler : BottomNavigationAction {
-    override fun onNavigate(navController: NavController, item: BottomNavigationItem) {
-        navController.navigate(item.screenRoute) {
+    override fun navigate(navController: NavController, item: BottomNavigationItem) {
+        navController.navigate(item.route) {
             navController.graph.startDestinationRoute?.let { screenRoute ->
                 popUpTo(screenRoute) {
                     saveState = true
