@@ -25,5 +25,7 @@ android {
 }
 
 dependencies {
+    implementation(project(libs.BuildModules.coreCommon))
+    implementation(project(libs.BuildModules.dataDogs))
     hilt()
 }

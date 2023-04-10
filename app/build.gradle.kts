@@ -85,6 +85,7 @@ android {
 }
 
 dependencies {
+    implementation(project(libs.BuildModules.dataDogs))
     kotlin()
     desugaring()
     androidCore()
