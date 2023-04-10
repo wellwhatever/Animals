@@ -6,7 +6,7 @@ import com.example.dogs.sources.DogFeedApiDataSource
 import javax.inject.Inject
 import kotlinx.coroutines.withContext
 
-class DogFeedsRepository @Inject internal constructor(
+class DogFeedRepository @Inject internal constructor(
     private val dogFeedApiDataSource: DogFeedApiDataSource,
     private val dispatchersProvider: DispatchersProvider
 ) {
