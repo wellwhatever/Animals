@@ -7,7 +7,7 @@ plugins {
 }
 
 android {
-    namespace = "com.example.dogs"
+    namespace = "com.example.domain.dogs"
     compileSdk = DefaultConfig.compileSdkVersion
 
     defaultConfig {

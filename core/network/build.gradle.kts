@@ -9,7 +9,7 @@ plugins {
 }
 
 android {
-    namespace = "com.example.network"
+    namespace = "com.example.core.network"
     compileSdk = DefaultConfig.compileSdkVersion
 
     defaultConfig {

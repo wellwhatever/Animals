@@ -8,7 +8,7 @@ plugins {
 }
 
 android {
-    namespace = "com.example.compose"
+    namespace = "com.example.core.compose"
     compileSdk = DefaultConfig.compileSdkVersion
 
     defaultConfig {

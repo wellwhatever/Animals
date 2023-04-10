@@ -1,6 +1,6 @@
+import libs.Compose.compose
 import libs.Hilt.hilt
 import libs.Kotlin.kotlin
-import libs.Compose.compose
 
 plugins {
     id("com.android.library")
@@ -9,7 +9,7 @@ plugins {
 }
 
 android {
-    namespace = "com.example.dogs"
+    namespace = "com.example.feature.dogs"
     compileSdk = DefaultConfig.compileSdkVersion
 
     defaultConfig {
@@ -23,6 +23,13 @@ android {
 
     kotlinOptions {
         jvmTarget = JavaVersion.VERSION_11.toString()
+    }
+
+    composeOptions {
+        kotlinCompilerExtensionVersion = libs.Compose.COMPOSE_COMPILER
+    }
+    buildFeatures {
+        compose = true
     }
 }
 

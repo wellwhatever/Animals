@@ -15,7 +15,7 @@ val apikeyProperties = Properties()
 apikeyProperties.load(FileInputStream(apikeyPropertiesFile))
 
 android {
-    namespace = "com.example.dogs"
+    namespace = "com.example.data.dogs"
     compileSdk = DefaultConfig.compileSdkVersion
 
     defaultConfig {
