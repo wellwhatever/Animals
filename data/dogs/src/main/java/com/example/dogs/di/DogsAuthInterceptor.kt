@@ -1,6 +1,6 @@
 package com.example.dogs.di
 
-import com.example.dogs.BuildConfig
+import com.example.data.dogs.BuildConfig
 import okhttp3.Interceptor
 import okhttp3.Response
 
