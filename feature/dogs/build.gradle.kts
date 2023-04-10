@@ -1,8 +1,10 @@
+import libs.AndroidCore.androidCore
 import libs.BuildModules
 import libs.Compose.compose
 import libs.Hilt.hilt
 import libs.Kotlin.kotlin
 import libs.Material3.material3
+import libs.Timber.timber
 
 plugins {
     id("com.android.library")
@@ -36,10 +38,13 @@ android {
 }
 
 dependencies {
+    implementation(project(BuildModules.coreCommon))
     implementation(project(BuildModules.coreModel))
     implementation(project(BuildModules.domainDogs))
+    androidCore()
     kotlin()
     compose()
     material3()
     hilt()
+    timber()
 }
