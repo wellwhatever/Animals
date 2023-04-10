@@ -40,6 +40,7 @@ android {
 dependencies {
     implementation(project(BuildModules.coreNetwork))
     implementation(project(BuildModules.coreCommon))
+    implementation(project(BuildModules.coreModel))
     retrofit()
     hilt()
 }

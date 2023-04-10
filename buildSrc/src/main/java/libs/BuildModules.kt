@@ -8,4 +8,5 @@ object BuildModules {
     const val domainDogs = ":domain:dogs"
     const val featureDogs = ":feature:dogs"
     const val coreCompose = ":core:compose"
+    const val coreModel = ":core:model"
 }

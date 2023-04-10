@@ -2,7 +2,7 @@ package com.example.dogs.sources
 
 import com.example.dogs.api.DogsApiInterface
 import com.example.dogs.converters.DogFeedResponseConverter
-import com.example.dogs.model.DogFeed
+import com.example.model.DogFeed
 import com.example.network.bodyOrException
 import javax.inject.Inject
 

@@ -1,4 +1,4 @@
-package com.example.dogs.model
+package com.example.model
 
 data class DogFeed(
     val id: String,

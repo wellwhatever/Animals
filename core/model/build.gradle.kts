@@ -1,13 +1,10 @@
-import libs.Hilt.hilt
-
 plugins {
     id("com.android.library")
-    id("kotlin-kapt")
     id("org.jetbrains.kotlin.android")
 }
 
 android {
-    namespace = "com.example.domain.dogs"
+    namespace = "com.example.core.model"
     compileSdk = DefaultConfig.compileSdkVersion
 
     defaultConfig {
@@ -22,11 +19,4 @@ android {
     kotlinOptions {
         jvmTarget = JavaVersion.VERSION_11.toString()
     }
-}
-
-dependencies {
-    implementation(project(libs.BuildModules.coreCommon))
-    implementation(project(libs.BuildModules.coreModel))
-    implementation(project(libs.BuildModules.dataDogs))
-    hilt()
 }

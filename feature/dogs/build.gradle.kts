@@ -1,3 +1,4 @@
+import libs.BuildModules
 import libs.Compose.compose
 import libs.Hilt.hilt
 import libs.Kotlin.kotlin
@@ -35,6 +36,8 @@ android {
 }
 
 dependencies {
+    implementation(project(BuildModules.coreModel))
+    implementation(project(BuildModules.domainDogs))
     kotlin()
     compose()
     material3()
