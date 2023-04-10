@@ -1,6 +1,7 @@
 import libs.Compose.compose
 import libs.Hilt.hilt
 import libs.Kotlin.kotlin
+import libs.Material3.material3
 
 plugins {
     id("com.android.library")
@@ -36,5 +37,6 @@ android {
 dependencies {
     kotlin()
     compose()
+    material3()
     hilt()
 }
