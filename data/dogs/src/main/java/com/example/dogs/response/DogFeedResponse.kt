@@ -8,5 +8,7 @@ data class DogFeedResponse(
     @Json(name = "id")
     val id: String,
     @Json(name = "url")
-    val imageUrl: String
+    val imageUrl: String,
+    @Json(name = "breeds")
+    val breeds: List<DogBreed>
 )
