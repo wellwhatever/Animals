@@ -10,7 +10,8 @@ class GetDogFeedUseCase @Inject constructor(
     private val dogFeedRepository: DogFeedRepository,
     private val dispatchersProvider: DispatchersProvider
 ) {
-    suspend operator fun invoke(): List<DogFeed> = withContext(dispatchersProvider.default) {
-        dogFeedRepository.getDogFeeds()
-    }
+    suspend operator fun invoke(limit: Int): List<DogFeed> =
+        withContext(dispatchersProvider.default) {
+            dogFeedRepository.getDogFeeds(limit)
+        }
 }

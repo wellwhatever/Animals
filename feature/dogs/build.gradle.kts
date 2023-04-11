@@ -39,6 +39,7 @@ android {
 
 dependencies {
     implementation(project(BuildModules.coreCommon))
+    implementation(project(BuildModules.coreCompose))
     implementation(project(BuildModules.coreModel))
     implementation(project(BuildModules.domainDogs))
     androidCore()

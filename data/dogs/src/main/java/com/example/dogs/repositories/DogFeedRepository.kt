@@ -10,7 +10,7 @@ class DogFeedRepository @Inject internal constructor(
     private val dogFeedApiDataSource: DogFeedApiDataSource,
     private val dispatchersProvider: DispatchersProvider
 ) {
-    suspend fun getDogFeeds(): List<DogFeed> = withContext(dispatchersProvider.io) {
-        dogFeedApiDataSource.getDogs()
+    suspend fun getDogFeeds(limit: Int): List<DogFeed> = withContext(dispatchersProvider.io) {
+        dogFeedApiDataSource.getDogs(limit)
     }
 }
