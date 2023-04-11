@@ -31,7 +31,7 @@ object DogsDataModule {
     internal fun provideDogsRetrofit(
         @Dogs okHttpClient: OkHttpClient,
         @NetworkModule.Default moshi: Moshi,
-        @NetworkModule.Default apiConfiguration: ApiConfiguration
+        apiConfiguration: ApiConfiguration
     ): Retrofit =
         Retrofit.Builder()
             .baseUrl(apiConfiguration.baseUrl)
