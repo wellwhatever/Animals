@@ -7,7 +7,10 @@ internal class DogFeedResponseConverter {
     fun toDomainObject(dogFeedResponse: DogFeedResponse): DogFeed = with(dogFeedResponse) {
         DogFeed(
             id = id,
-            imageUrl = imageUrl
+            imageUrl = imageUrl,
+            // For simplified purposes we'll use only first occurrence of dog's breed from response
+            name = breeds.firstOrNull()?.name.orEmpty(),
+            breed = breeds.firstOrNull()?.breedGroup.orEmpty()
         )
     }
 }
