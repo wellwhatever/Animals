@@ -5,6 +5,7 @@ import androidx.annotation.StringRes
 import androidx.compose.ui.unit.dp
 import com.example.animals.R
 import com.example.common.AppNavigationDestination
+import com.example.dogs.navigation.DOG_FEED_ROUTE
 
 sealed class BottomNavigationItem(
     @StringRes val titleRes: Int,
@@ -16,7 +17,7 @@ sealed class BottomNavigationItem(
         BottomNavigationItem(
             titleRes = R.string.bottom_navigation_dogs_route_title,
             iconRes = R.drawable.ic_thumb_up,
-            route = "dogs_route",
+            route = DOG_FEED_ROUTE,
             destination = "dogs_destination"
         )
 
