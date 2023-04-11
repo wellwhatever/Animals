@@ -1,5 +1,7 @@
+import libs.Coil.coil
 import libs.Compose.compose
 import libs.Kotlin.kotlin
+import libs.Material3.material3
 
 plugins {
     id("com.android.library")
@@ -23,9 +25,18 @@ android {
     kotlinOptions {
         jvmTarget = JavaVersion.VERSION_11.toString()
     }
+
+    composeOptions {
+        kotlinCompilerExtensionVersion = libs.Compose.COMPOSE_COMPILER
+    }
+    buildFeatures {
+        compose = true
+    }
 }
 
 dependencies {
     kotlin()
     compose()
+    material3()
+    coil()
 }
