@@ -13,7 +13,7 @@ import androidx.navigation.compose.rememberNavController
 import com.example.animals.navigation.NavigationGraph
 import com.example.animals.navigation.bottom.AnimalsBottomNavigation
 import com.example.animals.ui.AnimalsAppState
-import com.example.animals.ui.theme.AnimalsTheme
+import com.example.compose.theme.AnimalsTheme
 
 @Composable
 fun AnimalsAppStartRoute() {

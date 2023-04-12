@@ -86,6 +86,7 @@ android {
 
 dependencies {
     implementation(project(libs.BuildModules.coreCommon))
+    implementation(project(libs.BuildModules.coreCompose))
     implementation(project(libs.BuildModules.dataDogs))
     implementation(project(libs.BuildModules.featureDogs))
     kotlin()
