@@ -8,5 +8,5 @@ data class DogBreed(
     @Json(name = "name")
     val name: String,
     @Json(name = "breed_group")
-    val breedGroup: String
+    val breedGroup: String?
 )
