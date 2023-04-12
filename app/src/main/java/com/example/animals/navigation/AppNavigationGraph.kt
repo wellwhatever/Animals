@@ -10,7 +10,6 @@ import com.example.dogs.navigation.DOG_FEED_NAVIGATION_GRAPH
 import com.example.dogs.navigation.dogDetailScreen
 import com.example.dogs.navigation.dogFeedGraph
 import com.example.dogs.navigation.navigateToDogDetail
-import com.example.dogs.navigation.navigateToDogFeedGraph
 
 @Composable
 fun NavigationGraph(
@@ -27,9 +26,7 @@ fun NavigationGraph(
                 navHostController.navigateToDogDetail(dogFeedId)
             },
             nestedGraphs = {
-                dogDetailScreen(
-                    onBackClick = navHostController::navigateToDogFeedGraph
-                )
+                dogDetailScreen()
             }
         )
 

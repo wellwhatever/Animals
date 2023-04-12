@@ -12,6 +12,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.navigation.NavController
+import androidx.navigation.NavGraph.Companion.findStartDestination
 import androidx.navigation.compose.currentBackStackEntryAsState
 import kotlinx.collections.immutable.ImmutableList
 
@@ -58,8 +59,8 @@ fun BottomNavigation(
 object BottomNavigationClickHandler : BottomNavigationAction {
     override fun navigate(navController: NavController, item: BottomNavigationItem) {
         navController.navigate(item.route) {
-            navController.graph.startDestinationRoute?.let { screenRoute ->
-                popUpTo(screenRoute) {
+            navController.graph.findStartDestination().id.let { destinationId ->
+                popUpTo(destinationId) {
                     saveState = true
                 }
             }
