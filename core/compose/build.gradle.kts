@@ -1,3 +1,4 @@
+import libs.AndroidCore.androidCore
 import libs.Coil.coil
 import libs.Compose.compose
 import libs.Kotlin.kotlin
@@ -35,6 +36,7 @@ android {
 }
 
 dependencies {
+    androidCore()
     kotlin()
     compose()
     material3()

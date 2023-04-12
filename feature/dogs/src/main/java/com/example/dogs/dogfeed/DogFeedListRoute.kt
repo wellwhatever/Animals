@@ -11,6 +11,7 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
@@ -20,11 +21,15 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.tooling.preview.PreviewParameter
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.example.compose.CoilLoadingImage
 import com.example.compose.FullScreenLoading
 import com.example.compose.RefreshScreen
+import com.example.compose.theme.AnimalsTheme
 import com.example.core.common.R.dimen
+import com.example.dogs.DogFeedListPreviewProvider
 import com.example.model.DogFeed
 
 @Composable
@@ -137,4 +142,16 @@ fun DogsFeedLoading() {
 @Composable
 fun DogsFeedError(onRefreshClick: () -> Unit) {
     RefreshScreen(onRefreshClick = onRefreshClick)
+}
+
+@Preview
+@Composable
+fun DogFeedListContentPreview(
+    @PreviewParameter(DogFeedListPreviewProvider::class, limit = 1) dogFeeds: List<DogFeed>
+) {
+    AnimalsTheme {
+        Surface {
+            DogsFeedContent(onDogFeedClick = {}, dogFeeds = dogFeeds)
+        }
+    }
 }
