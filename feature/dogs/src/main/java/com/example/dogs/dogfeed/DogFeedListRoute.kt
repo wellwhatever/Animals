@@ -106,16 +106,16 @@ fun DogFeedItem(
         Spacer(modifier = Modifier.width(dimensionResource(id = dimen.spacer_8dp)))
 
         Column {
-            DogBreedItemTextField(text = dogName, style = MaterialTheme.typography.bodyLarge)
+            DogFeedItemTextField(text = dogName, style = MaterialTheme.typography.bodyLarge)
             Spacer(modifier = Modifier.width(dimensionResource(id = dimen.spacer_4dp)))
-            DogBreedItemTextField(text = dogBreed, style = MaterialTheme.typography.bodyMedium)
+            DogFeedItemTextField(text = dogBreed, style = MaterialTheme.typography.bodyMedium)
             Spacer(modifier = Modifier.width(dimensionResource(id = dimen.spacer_4dp)))
         }
     }
 }
 
 @Composable
-fun DogBreedItemTextField(
+fun DogFeedItemTextField(
     modifier: Modifier = Modifier,
     textAlign: TextAlign = TextAlign.Start,
     text: String,

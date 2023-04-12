@@ -10,7 +10,10 @@ internal class DogFeedApiDataSource @Inject constructor(
     private val dogsApiInterface: DogsApiInterface,
     private val dogsFeedResponseConverter: DogFeedResponseConverter
 ) {
-    suspend fun getDogs(limit: Int): List<DogFeed> =
-        dogsApiInterface.getDogs(limit).bodyOrException()
+    suspend fun getDogs(limit: Int, hasBreeds: Boolean): List<DogFeed> =
+        dogsApiInterface.getDogs(limit = limit, hasBreeds = hasBreeds).bodyOrException()
             .map { dogsFeedResponseConverter.toDomainObject(it) }
+
+    suspend fun getDogById(id: String): DogFeed = dogsApiInterface.getDog(id).bodyOrException()
+        .let { dogsFeedResponseConverter.toDomainObject(it) }
 }

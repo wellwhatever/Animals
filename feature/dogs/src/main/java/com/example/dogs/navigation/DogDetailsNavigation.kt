@@ -21,15 +21,13 @@ fun NavController.navigateToDogDetail(dogDetailId: String) {
     this.navigate("$DOG_DETAIL_ROUTE/${Uri.encode(dogDetailId)}")
 }
 
-fun NavGraphBuilder.dogDetailScreen(
-    onBackClick: () -> Unit,
-) {
+fun NavGraphBuilder.dogDetailScreen() {
     composable(
         route = "$DOG_DETAIL_ROUTE/{$DOG_DETAIL_ARG_ID}",
         arguments = listOf(
             navArgument(DOG_DETAIL_ARG_ID) { type = NavType.StringType }
         )
     ) {
-        DogDetailRoute(onBackClick)
+        DogDetailRoute()
     }
 }

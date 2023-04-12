@@ -46,7 +46,7 @@ class DogFeedListViewModel @Inject constructor(
         viewModelScope.safeLaunch(
             execute = {
                 errorOccurred.value = false
-                dogFeeds.value = getDogFeedUseCase(DOGS_LIMIT)
+                dogFeeds.value = getDogFeedUseCase(DOGS_LIMIT, true)
             },
             catch = {
                 Timber.e(it)
