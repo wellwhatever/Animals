@@ -1,16 +1,15 @@
 import java.io.FileInputStream
 import java.util.Properties
 import libs.AndroidCore.androidCore
+import libs.Coil.coil
+import libs.Compose.compose
+import libs.Desugaring.desugaring
 import libs.Hilt.hilt
 import libs.Kotlin.kotlin
-import libs.Compose.compose
-import libs.Coil.coil
-import libs.Desugaring.desugaring
 import libs.Material3.material3
 import libs.NavigationCompose.navigation
 import libs.Retrofit.retrofit
 import libs.Timber.timber
-import libs.UiTests.uiTests
 
 plugins {
     id("com.android.application")
@@ -69,11 +68,11 @@ android {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
     }
-    composeOptions {
-        kotlinCompilerExtensionVersion = libs.Compose.COMPOSE_COMPILER
-    }
     kotlinOptions {
         jvmTarget = JavaVersion.VERSION_11.toString()
+    }
+    composeOptions {
+        kotlinCompilerExtensionVersion = libs.Compose.COMPOSE_COMPILER
     }
     buildFeatures {
         compose = true
@@ -86,8 +85,10 @@ android {
 }
 
 dependencies {
-    implementation("androidx.compose.ui:ui-tooling-preview:1.4.1")
-    debugImplementation("androidx.compose.ui:ui-tooling:1.4.1")
+    implementation(project(libs.BuildModules.coreCommon))
+    implementation(project(libs.BuildModules.coreCompose))
+    implementation(project(libs.BuildModules.dataDogs))
+    implementation(project(libs.BuildModules.featureDogs))
     kotlin()
     desugaring()
     androidCore()

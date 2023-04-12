@@ -13,7 +13,8 @@ object AndroidCore {
         "androidx.core:core-ktx:$CORE_KTX",
         "androidx.fragment:fragment-ktx:$FRAGMENT_KTX",
         "androidx.lifecycle:lifecycle-livedata-ktx:$LIFECYCLE_KTX",
-        "androidx.lifecycle:lifecycle-viewmodel-ktx:$LIFECYCLE_KTX"
+        "androidx.lifecycle:lifecycle-viewmodel-ktx:$LIFECYCLE_KTX",
+        "androidx.lifecycle:lifecycle-runtime-ktx:$LIFECYCLE_KTX"
     )
 
     fun DependencyHandler.androidCore(configurationName: String = "implementation") =
